@@ -1,45 +1,48 @@
 import javax.swing.*;
 
-public class VerificaSeTextoPalindromo{
+public class VerificaSeTextoPalindromo {
 
-    public static String retiraEspaco(String str){
+    public static String removeEspaco(String entrada){
 
-        StringBuilder str2 = new StringBuilder("");
+        StringBuilder saida = new StringBuilder();
 
-        for(int y = 0, x = 0; y < str.length(); y++){
+        for(int y = 0; y < entrada.length(); y++){
 
-            if(str.charAt(y) != ' '){
-                str2.insert(x, str.charAt(y));
-                x++;
+            if(entrada.charAt(y) != ' '){
+
+                saida.append(entrada.charAt(y));
+
             }
             else{
+
                 continue;
+
             }
         }
 
-        return str2.toString();
+        return saida.toString();
 
     }
 
-    public static String inverteString(String str){
+    public static String inverteString(String entrada){
 
-        StringBuilder str2 = new StringBuilder("");
+        StringBuilder saida = new StringBuilder();
 
-        for(int y = str.length()-1, x = 0; y > -1; y--, x++){
+        for(int y = entrada.length()-1; y > -1; y--){
 
-            str2.insert(x, str.charAt(y));
-
+            saida.append(entrada.charAt(y));
+            
         }
 
-        return str2.toString();
+        return saida.toString();
 
     }
 
-    public static String comparaString(String str, String str2){
+    public static String comparaString(String entrada1, String entrada2){
 
-        for(int y = 0; y < str.length(); y++){
+        for(int y = 0; y < entrada1.length();){
 
-            if(str.charAt(y) != str2.charAt(y)){
+            if(entrada1.charAt(y) != entrada2.charAt(y)){
 
                 return "Não é palíndromo";
 
@@ -56,11 +59,14 @@ public class VerificaSeTextoPalindromo{
     }
 
     public static void main(String[] args) {
-        String str = JOptionPane.showInputDialog(null, "Digite um texto ou frase:");
-        str = retiraEspaco(str);
 
-        String str2 = inverteString(str);
+        String entrada = JOptionPane.showInputDialog(null, "Digite uma palavra ou frase:");
+    
+        entrada = removeEspaco(entrada);
 
-        JOptionPane.showMessageDialog(null, comparaString(str, str2));
+        String entrada2 = inverteString(entrada);
+
+        JOptionPane.showMessageDialog(null, comparaString(entrada, entrada2));
+
     }
 }
