@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Recebe3ValoresInteirosABC {
     
-    public static String funcaofor(int a, int b, int c){
+    public static String funcaoFor(int a, int b, int c){
 
         String resultado = "";
 
@@ -24,7 +24,7 @@ public class Recebe3ValoresInteirosABC {
         int b = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o valor de B:"));
         int c = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o valor de C:"));
 
-        JOptionPane.showMessageDialog(null, funcaofor(a,b,c));
+        JOptionPane.showMessageDialog(null, funcaoFor(a,b,c));
 
     }
 }

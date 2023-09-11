@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class VerificaSeTextoPalindromo{
 
-    public static String removeSpace(String str){
+    public static String retiraEspaco(String str){
 
         StringBuilder str2 = new StringBuilder("");
 
@@ -21,7 +21,7 @@ public class VerificaSeTextoPalindromo{
 
     }
 
-    public static String inverterString(String str){
+    public static String inverteString(String str){
 
         StringBuilder str2 = new StringBuilder("");
 
@@ -35,26 +35,32 @@ public class VerificaSeTextoPalindromo{
 
     }
 
-    public static String compareString(String str, String str2){
+    public static String comparaString(String str, String str2){
 
-        if(str.equals(str2)){
+        for(int y = 0; y < str.length(); y++){
 
-            return "É palíndromo";
+            if(str.charAt(y) != str2.charAt(y)){
 
+                return "Não é palíndromo";
+
+            }
+            else{
+
+                return "É palíndromo";
+
+            }
         }
-        else{
 
-            return "Não é palíndromo";
+        return "";
 
-        }
     }
 
     public static void main(String[] args) {
         String str = JOptionPane.showInputDialog(null, "Digite um texto ou frase:");
-        str = removeSpace(str);
+        str = retiraEspaco(str);
 
-        String str2 = inverterString(str);
+        String str2 = inverteString(str);
 
-        JOptionPane.showMessageDialog(null, compareString(str, str2));
+        JOptionPane.showMessageDialog(null, comparaString(str, str2));
     }
 }
